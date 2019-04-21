@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
+# From https://gist.github.com/nilsding/b6105a8949955ce81f82dabc37650640
 # Example usage:
-#  print_msg green "Successfully built $something"
 #
-#  print_msg red "An error occurred:" $msg
+# print_msg green "Successfully built $something"
+# print_msg red "An error occurred:" $msg
 print_msg() {
   color="1"
   case $1 in
