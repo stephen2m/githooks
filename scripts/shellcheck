@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+. shell_helpers
+
+if ! shellcheck --version > /dev/null; then
+  print_msg yellow "Skipping shellcheck - not installed"
+fi
+
+modified_files=$(git diff --name-only | egrep '\.sh$|\*.bash$|\*.ksh$')
+
+if shellcheck -a ${modified_files}; then
+  print_msg green "Shellcheck OK, awesome!"
+else
+  print_msg red "Shellcheck problems detected"
+
+  exit 1
+fi

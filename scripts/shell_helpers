@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Example usage:
+#  print_msg green "Successfully built $something"
+#
+#  print_msg red "An error occurred:" $msg
+print_msg() {
+  color="1"
+  case $1 in
+    red)    color="31;1" ;;
+    green)  color="32;1" ;;
+    yellow) color="33;1" ;;
+  esac
+  shift
+  # shellcheck disable=SC1117
+  printf " \033[${color}m*\033[0;1m %s\033[0m\n" "$*"
+}
