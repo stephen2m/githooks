@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 if `ls | egrep '\.sh$|\.bash$|\.ksh$'`; then
-  ./scripts/shellcheck
+  ./scripts/shell_check
   ./scripts/shell_functions_have_comments
 fi
